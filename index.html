@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     الملف: index.html
+     الوظيفة: الهيكل الرئيسي للصفحة (HTML)
+     ============================================================ -->
+     
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أثر | سبل العيش وتمكين الأشخاص ذوي الإعاقة</title>
+  <!-- ====== Favicon ====== -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- أيقونة بسيطة -->
+    <link rel="icon" href="images/Logoathr.png">
+
+    <!-- ============================================================
+    الموارد الخارجية (External Resources)
+    ============================================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+
+    <!-- ============================================================
+    الأنماط (Styles) - ملف منفصل: style.css
+    ============================================================ -->
+    <link rel="stylesheet" href="style.css">
+    <link
+rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+</head>
+
+<body>
+
+    <!-- ============================================================
+    الرأس (Header)
+    ============================================================ -->
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <!-- العلامة التجارية -->
+            <div class="brand">
+                <img class="brand-logo" src="images/Logoathr.png" alt="شعار مؤسسة أثر" onerror="this.src='https://placehold.co/120x120/0a6657/ffffff?text=%D8%A3%D8%AB%D8%B1'">
+                <div class="brand-text">
+                    <h1 id="brandTitle">مؤسسة أثر للتنمية والتطوير</h1>
+                    <p id="brandSub">سبل العيش وتمكين الأشخاص ذوي الإعاقة</p>
+                </div>
+            </div>
+
+            <!-- شريط التنقل -->
+            <nav class="nav-links">
+                <a href="#about" id="navAbout">عن المشروع</a>
+                <a href="#approach" id="navApproach">المنهجية</a>
+                <a href="#projects" id="navProjects">المشاريع</a>
+                <a href="#cfw" id="navCfw">النقد مقابل العمل</a>
+                <a href="#results" id="navResults">الأثر</a>
+                <a href="#gallery" id="navGallery">الصور</a>
+                <button class="btn-ctrl" id="translateBtn"><i class="fa-solid fa-language"></i> <span id="translateText">English</span></button>
+                <button class="btn-ctrl btn-pdf-special" id="pdfExportBtn"><i class="fa-solid fa-file-pdf"></i> <span id="pdfText">تصدير PDF</span></button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    المحتوى الرئيسي (Main Content)
+    ============================================================ -->
+    <main id="reportContent">
+
+        <!-- ====== القسم البطل (Hero) ====== -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <!-- اللوحة الرئيسية -->
+                <div class="hero-panel reveal">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <div class="hero-top">
+                            <div>
+                                <span class="eyebrow" id="heroBadge1"><i class="fa-solid fa-star"></i> مشروع تنموي بالشراككة الدولية</span>
+                                <div class="hero-badges">
+                                    <span class="badge"><i class="fa-solid fa-handshake"></i> PUI</span>
+                                    <span class="badge"><i class="fa-solid fa-globe"></i> UNDP</span>
+                                    <span class="badge"><i class="fa-solid fa-leaf"></i> <span id="finlandBadge">تمويل الحكومة الفنلندية</span></span>
+                                </div>
+                            </div>
+                            <img class="hero-logo" src="images/Logoathr.png" alt="شعار أثر" onerror="this.src='https://placehold.co/120x120/ffffff/0a6657?text=%D8%A3%D8%AB%D8%B1'">
+                        </div>
+                        <div class="hero-copy">
+                            <h2 id="heroTitle">سبل العيش وتمكين الأشخاص ذوي الإعاقة</h2>
+                            <p id="heroDesc">مشروع يعكس التزام مؤسسة أثر بتحويل الدعم الإنساني إلى أثر تنموي ملموس، من خلال التمكين الاقتصادي والاجتماعي للأشخاص ذوي الإعاقة وأسرهم، وتعزيز مشاركتهم الفاعلة في المجتمع المحلي.</p>
+                            <div class="hero-actions">
+                                <a class="btn btn-primary" href="#results" id="heroBtn1"><i class="fa-solid fa-arrow-down"></i> استعرض الأثر والنتائج</a>
+                                <a class="btn btn-ghost" href="#about" id="heroBtn2"><i class="fa-solid fa-circle-info"></i> اقرأ ملخص المشروع</a>
+                            </div>
+                        </div>
+                        <div class="hero-meta">
+                            <div class="meta-card"><span id="meta1Label">الفترة الزمنية</span><strong id="meta1Val">01 / 10 / 2025 – 31 / 07 / 2026</strong></div>
+                            <div class="meta-card"><span id="meta2Label">النطاق الجغرافي</span><strong id="meta2Val">القنيطرة، درعا، السويداء، دمشق، ريف دمشق</strong></div>
+                            <div class="meta-card"><span id="meta3Label">التنفيذ المباشر</span><strong id="meta3Val">خان أرنبة – القنيطرة</strong></div>
+                            <div class="meta-card"><span id="meta4Label">نموذج التدخل</span><strong id="meta4Val">منح + نقد مقابل العمل</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الشريط الجانبي -->
+                <aside class="hero-side">
+                    <div class="side-card reveal">
+                        <div class="inner">
+                            <div class="mini-title"><i class="fa-solid fa-bullseye"></i> <span id="sideTitle1">لماذا هذا المشروع مهم؟</span></div>
+                            <p class="mini-text" id="sideDesc1">لأن التمكين الحقيقي لا يقتصر على تقديم المساعدة، بل يفتح مساراً للاعتماد على الذات، ويمنح الأشخاص ذوي الإعاقة فرصة ممارسة دورهم الاقتصادي والاجتماعي بكفاءة وكرامة.</p>
+                            <div class="partner-strip">
+                                <span class="partner-pill"><i class="fa-solid fa-users"></i> <span id="pill1">22 مستفيداً</span></span>
+                                <span class="partner-pill"><i class="fa-solid fa-house"></i> <span id="pill2">50 أسرة</span></span>
+                                <span class="partner-pill"><i class="fa-solid fa-shop"></i> <span id="pill3">9 مشاريع</span></span>
+                                <span class="partner-pill"><i class="fa-solid fa-hammer"></i> <span id="pill4">13 مستفيد CfW</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side-card side-visual reveal">
+                        <div class="floating-chip">
+                            <strong id="centerName">مركز أعطونا الأمل</strong>
+                            <span id="centerDesc">تحول من مساحة سابقة إلى مركز مجتمعي يخدم الأشخاص ذوي الإعاقة</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ====== الإحصائيات السريعة ====== -->
+        <section>
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card reveal"><div class="stat-icon"><i class="fa-solid fa-house-chimney-user"></i></div><div class="stat-number counter" data-target="50">0</div><div class="stat-label" id="stat1Label">أسرة تمت زيارتها</div><div class="stat-note" id="stat1Note">زيارة منزلية وتحليل احتياج</div></div>
+                    <div class="stat-card reveal"><div class="stat-icon"><i class="fa-solid fa-user-check"></i></div><div class="stat-number counter" data-target="22">0</div><div class="stat-label" id="stat2Label">مستفيداً نهائياً</div><div class="stat-note" id="stat2Note">8 إناث و14 ذكراً</div></div>
+                    <div class="stat-card reveal"><div class="stat-icon"><i class="fa-solid fa-store"></i></div><div class="stat-number counter" data-target="9">0</div><div class="stat-label" id="stat3Label">مشاريع مدرة للدخل</div><div class="stat-note" id="stat3Note">منح إنتاجية مستهدفة</div></div>
+                    <div class="stat-card reveal"><div class="stat-icon"><i class="fa-solid fa-helmet-safety"></i></div><div class="stat-number counter" data-target="13">0</div><div class="stat-label" id="stat4Label">مستفيدو CfW</div><div class="stat-note" id="stat4Note">إعادة تأهيل مركز تمكن</div></div>
+                    <div class="stat-card reveal"><div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div><div class="stat-number counter" data-target="100">0</div><div class="stat-label" id="stat5Label">استمرارية المشاريع</div><div class="stat-note" id="stat5Note">% حتى نهاية المشروع</div></div>
+                    <div class="stat-card reveal"><div class="stat-icon"><i class="fa-solid fa-money-bill-wave"></i></div><div class="stat-number counter" data-target="21600">0</div><div class="stat-label" id="stat6Label">تمويل المنح</div><div class="stat-note" id="stat6Note">دولار أمريكي</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== عن المشروع ====== -->
+        <section id="about">
+            <div class="container">
+                <div class="two-cols">
+                    <div class="section-card pad reveal">
+                        <div class="section-head">
+                            <div>
+                                <h3 class="section-title" id="aboutTitle">عن مؤسسة أثر والمشروع</h3>
+                                <p class="section-subtitle" id="aboutSub">صياغة مؤسساتية تعكس قوة الأثر والشراكات.</p>
+                            </div>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-card"><h4 id="about1Title">مؤسسة أثر للتنمية والتطوير</h4><p id="about1Desc">مؤسسة تعمل بمنهج تنموي تشاركي يركز على بناء القدرات، وتمكين الفئات الأشد هشاشة، وتحويل التدخلات إلى مسارات أكثر استدامة.</p></div>
+                            <div class="info-card"><h4 id="about2Title">هدف المشروع العام</h4><p id="about2Desc">تعزيز التمكين الاقتصادي والاجتماعي للأشخاص ذوي الإعاقة وأسرهم، عبر دعم سبل العيش وإعادة تأهيل بيئة مجتمعية حاضنة.</p></div>
+                            <div class="info-card"><h4 id="about3Title">الفئة المستهدفة</h4><p id="about3Desc">أشخاص ذوو إعاقة من أنماط مختلفة: حركية، سمعية، بصرية، ومتعددة، مع مراعاة الهشاشة الاقتصادية.</p></div>
+                            <div class="info-card"><h4 id="about4Title">منطق التدخل</h4><p id="about4Desc">الجمع بين منح إنتاجية ونقد مقابل العمل لتأمين دخل مباشر، وفي الوقت نفسه خلق منفعة مجتمعية مستدامة.</p></div>
+                        </div>
+                    </div>
+                    <div class="section-card pad reveal">
+                        <div class="section-head">
+                            <div>
+                                <h3 class="section-title" id="geoTitle">النطاق الجغرافي</h3>
+                                <p class="section-subtitle" id="geoSub">وصل المشروع إلى خمس محافظات سورية، مع تنفيذ مباشر في خان أرنبة – القنيطرة.</p>
+                            </div>
+                        </div>
+                        <div class="chip-wrap">
+                            <span class="chip"><i class="fa-solid fa-location-dot"></i> <span id="gov1">القنيطرة (تنفيذ مباشر)</span></span>
+                            <span class="chip"><i class="fa-solid fa-location-dot"></i> <span id="gov2">درعا</span></span>
+                            <span class="chip"><i class="fa-solid fa-location-dot"></i> <span id="gov3">السويداء</span></span>
+                            <span class="chip"><i class="fa-solid fa-location-dot"></i> <span id="gov4">دمشق</span></span>
+                            <span class="chip"><i class="fa-solid fa-location-dot"></i> <span id="gov5">ريف دمشق</span></span>
+                        </div>
+                        <div class="project-map-wrapper">
+                            <div id="projectMap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== المنهجية ====== -->
+        <section id="approach">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h3 class="section-title" id="approachTitle">منهجية التنفيذ</h3>
+                        <p class="section-subtitle" id="approachSub">اعتمد المشروع منهجية دقيقة متعددة المراحل لضمان جودة الاستهداف ورفع فاعلية التدخل.</p>
+                    </div>
+                </div>
+                <div class="section-card pad reveal">
+                    <div class="process">
+                        <div class="step"><div class="step-num">1</div><div><h4 id="step1Title">المسح والتقييم</h4><p id="step1Desc">تنفيذ 50 زيارة منزلية، تحليل الاحتياجات الاجتماعية والاقتصادية، وتقدير قابلية الاستفادة.</p></div><span class="tag" id="step1Tag">المرحلة الأولى</span></div>
+                        <div class="step"><div class="step-num">2</div><div><h4 id="step2Title">الاختيار والفرز</h4><p id="step2Desc">فرز 22 مستفيداً نهائياً وفق معايير الهشاشة والجدوى والقدرة على الاستفادة من التدخل.</p></div><span class="tag" id="step2Tag">معايير دقيقة</span></div>
+                        <div class="step"><div class="step-num">3</div><div><h4 id="step3Title">التدخل المزدوج</h4><p id="step3Desc">تنفيذ سبل العيش عبر المنح، وتنفيذ برنامج النقد مقابل العمل لإعادة تأهيل مركز تمكن.</p></div><span class="tag" id="step3Tag">التدخل المزدوج</span></div>
+                        <div class="step"><div class="step-num">4</div><div><h4 id="step4Title">المتابعة والإغلاق</h4><p id="step4Desc">زيارات ميدانية كل 15 يوم، متابعة فنية مستمرة، وتقييم نهائي في شهر تموز 2026.</p></div><span class="tag" id="step4Tag">استدامة</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== سبل العيش ====== -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h3 class="section-title" id="livelihoodTitle">برنامج سبل العيش</h3>
+                        <p class="section-subtitle" id="livelihoodSub">مشاريع صغيرة متنوعة صممت لتناسب البيئة المحلية، وتدعم الاستقلال الاقتصادي.</p>
+                    </div>
+                </div>
+                <div class="two-cols">
+                    <div class="section-card pad reveal">
+                        <div class="info-grid">
+                            <div class="info-card"><h4 id="trainTitle">التدريب</h4><p id="trainDesc">12 مستفيداً تلقوا تدريباً لمدة 4 أيام، مع تطبيق عملي في إدارة المشاريع والتسويق والإدارة المالية ودراسة الجدوى.</p></div>
+                            <div class="info-card"><h4 id="grantTitle">قيمة المنحة</h4><p id="grantDesc">2400 دولار لكل مشروع، بإجمالي تمويل للمنح بلغ 21,600 دولار أمريكي.</p></div>
+                            <div class="info-card"><h4 id="followTitle">المتابعة</h4><p id="followDesc">زيارات ميدانية دورية كل 15 يوماً لضمان جودة التنفيذ ودعم الاستمرارية.</p></div>
+                            <div class="info-card"><h4 id="sustainTitle">الاستمرارية</h4><p id="sustainDesc">حققت المشاريع نسبة استمرارية 100% حتى نهاية المشروع وفق المتابعة الميدانية.</p></div>
+                        </div>
+                    </div>
+                    <div class="section-card pad reveal">
+                        <h3 class="section-title" style="font-size:1.3rem; margin-bottom:12px" id="projectTypesTitle">أنواع المشاريع الممولة</h3>
+                        <div class="chip-wrap">
+                            <span class="chip"><i class="fa-solid fa-paw"></i> <span id="projType1">تربية مواشي (2)</span></span>
+                            <span class="chip"><i class="fa-solid fa-oil-can"></i> <span id="projType2">تغيير زيت سيارات</span></span>
+                            <span class="chip"><i class="fa-solid fa-basket-shopping"></i> <span id="projType3">بقالية</span></span>
+                            <span class="chip"><i class="fa-solid fa-microchip"></i> <span id="projType4">صيانة إلكترونيات</span></span>
+                            <span class="chip"><i class="fa-solid fa-pepper-hot"></i> <span id="projType5">محل بهارات</span></span>
+                            <span class="chip"><i class="fa-solid fa-cookie-bite"></i> <span id="projType6">صناعة حلويات</span></span>
+                            <span class="chip"><i class="fa-solid fa-truck-moving"></i> <span id="projType7">رافعة بناء</span></span>
+                            <span class="chip"><i class="fa-solid fa-kitchen-set"></i> <span id="projType8">أدوات منزلية ومطبخ</span></span>
+                        </div>
+                        <div class="list">
+                            <div class="list-item"><i class="fa-solid fa-check"></i><div><strong id="selectPrinciple">مبدأ الاختيار</strong><span id="selectDesc">تمت مواءمة نوع المشروع مع خبرة المستفيد، والفرص المتاحة في السوق، وقابلية الاستدامة.</span></div></div>
+                            <div class="list-item"><i class="fa-solid fa-check"></i><div><strong id="techSupport">الدعم الفني</strong><span id="techDesc">توجيه فني بعد المنحة لتقليل المخاطر وتحسين فرص النمو والتوسع التدريجي.</span></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-grid" style="margin-top:18px">
+                    <div class="project-card reveal">
+                        <div class="project-top"><div class="icon"><i class="fa-solid fa-cow"></i></div></div>
+                        <div class="project-body">
+                            <h4 id="card1Title">تربية مواشي</h4>
+                            <p id="card1Desc">مشروع يحقق دخلاً متدرجاً ويستفيد من الخبرة المحلية.</p>
+                            <div class="project-meta"><span class="mini-chip" id="card1Chip">مشروع مدر للدخل</span></div>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-top"><div class="icon"><i class="fa-solid fa-basket-shopping"></i></div></div>
+                        <div class="project-body">
+                            <h4 id="card2Title">بقالية</h4>
+                            <p id="card2Desc">خيار عملي يلائم الاحتياج اليومي للسوق المحلي.</p>
+                            <div class="project-meta"><span class="mini-chip" id="card2Chip">طلب مستمر</span></div>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-top"><div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div></div>
+                        <div class="project-body">
+                            <h4 id="card3Title">صيانة إلكترونيات</h4>
+                            <p id="card3Desc">منفعة خدمية مطلوبة في المجتمع المحلي.</p>
+                            <div class="project-meta"><span class="mini-chip" id="card3Chip">مهارة فنية</span></div>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-top"><div class="icon"><i class="fa-solid fa-jar"></i></div></div>
+                        <div class="project-body">
+                            <h4 id="card4Title">محل بهارات</h4>
+                            <p id="card4Desc">مشروع صغير بتكلفة مدروسة وهوامش حركة جيدة.</p>
+                            <div class="project-meta"><span class="mini-chip" id="card4Chip">دوران سريع</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== النقد مقابل العمل ====== -->
+        <section id="cfw">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h3 class="section-title" id="cfwTitle">برنامج النقد مقابل العمل</h3>
+                        <p class="section-subtitle" id="cfwSub">تدخل يستهدف تحويل الحافز النقدي إلى قيمة مجتمعية ملموسة من خلال تأهيل مركز "تمكن".</p>
+                    </div>
+                </div>
+                <div class="two-cols">
+                    <div class="section-card pad reveal">
+                        <div class="info-grid">
+                            <div class="info-card"><h4 id="cfwCount">عدد المستفيدين</h4><p id="cfwCountDesc">13 مستفيداً تلقوا تدريباً لمدة يومين في السلامة المهنية وآليات العمل قبل البدء بالتنفيذ.</p></div>
+                            <div class="info-card"><h4 id="cfwIncentives">الحوافز النقدية</h4><p id="cfwIncentivesDesc">360 دولاراً لكل مستفيد، بإجمالي حوافز 4,680 دولاراً أمريكياً.</p></div>
+                            <div class="info-card"><h4 id="cfwBudget">موازنة التأهيل</h4><p id="cfwBudgetDesc">5,000 دولار مخصصة لأعمال الترميم والتجهيز والشراء والتأثيث.</p></div>
+                            <div class="info-card"><h4 id="cfwTotal">الإجمالي</h4><p id="cfwTotalDesc">إجمالي تدخل برنامج النقد مقابل العمل بلغ 9,680 دولاراً أمريكياً.</p></div>
+                        </div>
+                    </div>
+                    <div class="section-card pad reveal">
+                        <h3 class="section-title" style="font-size:1.3rem; margin-bottom:12px" id="cfwWorksTitle">الأعمال المنفذة في مبادرة أعطونا الأمل</h3>
+                        <div class="list">
+                            <div class="list-item"><i class="fa-solid fa-screwdriver-wrench"></i><div><strong id="work1Title">تقييم احتياجات المركز</strong><span id="work1Desc">تحديد الأولويات الفنية والمجالية قبل البدء بالأعمال.</span></div></div>
+                            <div class="list-item"><i class="fa-solid fa-hammer"></i><div><strong id="work2Title">الترميم والتأهيل</strong><span id="work2Desc">تنفيذ الأعمال الأساسية وتحسين الجاهزية الوظيفية للمكان.</span></div></div>
+                            <div class="list-item"><i class="fa-solid fa-couch"></i><div><strong id="work3Title">تجهيز المساحات الداخلية</strong><span id="work3Desc">تأثيث وتنظيم المساحات لتخدم الأنشطة والخدمات المجتمعية.</span></div></div>
+                            <div class="list-item"><i class="fa-solid fa-boxes-stacked"></i><div><strong id="work4Title">شراء المستلزمات والأدوات</strong><span id="work4Desc">توفير الأدوات اللازمة لضمان الاستخدام العملي للمركز.</span></div></div>
+                            <div class="list-item"><i class="fa-solid fa-people-arrows"></i><div><strong id="work5Title">تنظيم بيئة تعليمية وخدمية</strong><span id="work5Desc">تهيئة مساحة أكثر ملاءمة للأشخاص ذوي الإعاقة.</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== الجدول الزمني ====== -->
+   <!-- ====== الجدول الزمني ====== -->
+<section>
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <h3 class="section-title" id="timelineMainTitle">الجدول الزمني العام للمشروع</h3>
+                <p class="section-subtitle" id="timelineMainSub">تسلسل زمني يوضح كيف انتقل المشروع من التقييم إلى الإغلاق.</p>
+            </div>
+        </div>
+        <div class="section-card pad reveal">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date" id="time1Date">10 / 2025 – 11 / 2025</div>
+                    <div class="timeline-content">
+                        <h4 id="time1Title">التقييم</h4>
+                        <p id="time1Desc">تنفيذ الزيارات المنزلية وتحليل الاحتياجات الاجتماعية والاقتصادية.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date" id="time2Date">11 / 2025</div>
+                    <div class="timeline-content">
+                        <h4 id="time2Title">الاختيار</h4>
+                        <p id="time2Desc">فرز المستفيدين النهائيين وفق معايير الهشاشة والجدوى.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date" id="time3Date">12 / 2025 – 01 / 2026</div>
+                    <div class="timeline-content">
+                        <h4 id="time3Title">التدريب</h4>
+                        <p id="time3Desc">تنفيذ تدريب سبل العيش وتدريب النقد مقابل العمل.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date" id="time4Date">02 / 2026 – 05 / 2026</div>
+                    <div class="timeline-content">
+                        <h4 id="time4Title">تنفيذ المنح</h4>
+                        <p id="time4Desc">شراء المعدات والبدء الفعلي بالمشاريع الصغيرة المدرة للدخل.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date" id="time5Date">03 / 2026 – 06 / 2026</div>
+                    <div class="timeline-content">
+                        <h4 id="time5Title">التأهيل (CfW)</h4>
+                        <p id="time5Desc">أعمال تأهيل مركز تمكن وإعادة تنظيمه كمركز مجتمعي خدمي.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date" id="time6Date">07 / 2026</div>
+                    <div class="timeline-content">
+                        <h4 id="time6Title">الإغلاق والتقييم النهائي</h4>
+                        <p id="time6Desc">استكمال التوثيق، قياس النتائج، وإعداد التقرير الختامي.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- ====== الأثر العام ====== -->
+        <section id="results">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h3 class="section-title" id="impactTitle">الأثر العام للمشروع</h3>
+                        <p class="section-subtitle" id="impactSub">الأثر لا يُقاس فقط بالأرقام، بل بقدرته على خلق فرص وتوسيع المشاركة.</p>
+                    </div>
+                </div>
+                <div class="impact-grid">
+                    <div class="impact-card reveal">
+                        <h4><i class="fa-solid fa-coins"></i> <span id="impactEconTitle">الأثر الاقتصادي</span></h4>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i><span id="impactEcon1">إنشاء 9 مشاريع صغيرة مدرة للدخل.</span></li>
+                            <li><i class="fa-solid fa-check"></i><span id="impactEcon2">تعزيز قدرة 22 مستفيداً على توليد دخل مباشر.</span></li>
+                            <li><i class="fa-solid fa-check"></i><span id="impactEcon3">تمويل مباشر للمنح بقيمة 21,600 دولار.</span></li>
+                        </ul>
+                    </div>
+                    <div class="impact-card reveal">
+                        <h4><i class="fa-solid fa-people-group"></i> <span id="impactSocialTitle">الأثر الاجتماعي</span></h4>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i><span id="impactSocial1">تعزيز دمج الأشخاص ذوي الإعاقة في المجتمع المحلي.</span></li>
+                            <li><i class="fa-solid fa-check"></i><span id="impactSocial2">تحسين الوصول إلى فرص المشاركة والخدمة.</span></li>
+                            <li><i class="fa-solid fa-check"></i><span id="impactSocial3">رفع الثقة والاعتماد على الذات لدى المستفيدين.</span></li>
+                        </ul>
+                    </div>
+                    <div class="impact-card reveal">
+                        <h4><i class="fa-solid fa-building-circle-check"></i> <span id="impactInstTitle">الأثر المؤسسي</span></h4>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i><span id="impactInst1">إنشاء مركز "تمكن" كمرفق مجتمعي مستدام.</span></li>
+                            <li><i class="fa-solid fa-check"></i><span id="impactInst2">تجسيد نموذج تدخل مزدوج أكثر فاعلية.</span></li>
+                            <li><i class="fa-solid fa-check"></i><span id="impactInst3">تعزيز الشراكات مع PUI وUNDP والجهات الداعمة.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== المؤشرات المالية ====== -->
+        <section>
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h3 class="section-title" id="financeTitle">المؤشرات المالية والتنفيذية</h3>
+                        <p class="section-subtitle" id="financeSub">ملخص واضح ومباشر يسهّل على القارئ التقاط الصورة الرقمية للمشروع.</p>
+                    </div>
+                </div>
+                <div class="finance">
+                    <div class="finance-card reveal"><div class="label" id="fin1Label">تمويل المنح</div><div class="value">$21,600</div><div class="desc" id="fin1Desc">9 مشاريع × 2400 دولار</div></div>
+                    <div class="finance-card reveal"><div class="label" id="fin2Label">الحوافز النقدية</div><div class="value">$4,680</div><div class="desc" id="fin2Desc">13 مستفيداً × 360 دولار</div></div>
+                    <div class="finance-card reveal"><div class="label" id="fin3Label">موازنة التأهيل</div><div class="value">$5,000</div><div class="desc" id="fin3Desc">أعمال ترميم وتجهيز مركز تمكن</div></div>
+                    <div class="finance-card reveal"><div class="label" id="fin4Label">إجمالي التدخل في CfW</div><div class="value">$9,680</div><div class="desc" id="fin4Desc">الحوافز + التأهيل</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== معرض الصور ====== -->
+        <section id="gallery">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h3 class="section-title" id="galleryTitle">معرض الصور</h3>
+                        <p class="section-subtitle" id="gallerySub">توثيق بصري للزيارات المنزلية، التدريب، المشاريع الصغيرة، وأعمال مركز تمكن.</p>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <figure class="reveal"><img src="images/training.JPG" alt="تدريب المستفيدين" onerror="this.style.display='none'"><figcaption id="galleryCap2">تدريب سبل العيش</figcaption></figure>
+                    <figure class="reveal"><img src="images/m.JPG" alt="مشروع صغير" onerror="this.style.display='none'"><figcaption id="galleryCap3">أحد مشاريع المنح</figcaption></figure>
+                    <figure class="reveal"><img src="images/k.JPG" alt="مركز تمكن" onerror="this.style.display='none'"><figcaption id="galleryCap4">تأهيل مركز تمكن</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== الشركاء ====== -->
+        <section>
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h3 class="section-title" id="partnersTitle">شركاء النجاح</h3>
+                        <p class="section-subtitle" id="partnersSub">شراكة استراتيجية أسهمت في تحقيق أهداف المشروع.</p>
+                    </div>
+                </div>
+                <div class="partners">
+                    <div class="partner-card reveal"><img src="images/logoathr.png" alt="مؤسسة أثر" onerror="this.style.display='none'"></div>
+                    <div class="partner-card reveal"><img src="images/logo-pui.svg" alt="PUI" onerror="this.style.display='none'"></div>
+                    <div class="partner-card reveal"><img src="images/undp-logo-blue.4f32e17f.svg" alt="UNDP" onerror="this.style.display='none'"></div>
+                    <div class="partner-card reveal"><img src="images/finland.png" alt="الحكومة الفنلندية" onerror="this.style.display='none'"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== الختام ====== -->
+        <section>
+            <div class="container">
+                <div class="closing reveal">
+                    <div class="closing-inner">
+                        <div>
+                            <h3 id="closingTitle">مؤسسة أثر لا تقدم تدخلاً مؤقتاً، بل تبني أثراً قابلًا للاستمرار</h3>
+                            <p id="closingDesc">من خلال هذا المشروع، برهنت مؤسسة أثر للتنمية والتطوير على قدرتها في تنفيذ تدخلات مركبة، تجمع بين التمكين الاقتصادي، والحوكمة الشفافة، والتأهيل المجتمعي، ضمن شراكة فعّالة مع PUI وUNDP وبتمويل من الحكومة الفنلندية.</p>
+                        </div>
+                        <div class="closing-stats">
+                            <div class="closing-box"><span id="closingPeriod">مدة المشروع</span><strong>10/2025 – 07/2026</strong></div>
+                            <div class="closing-box"><span id="closingBenef">عدد المستفيدين المباشرين</span><strong>22</strong></div>
+                            <div class="closing-box"><span id="closingFamilies">الأسر التي تمت زيارتها</span><strong>50</strong></div>
+                            <div class="closing-box"><span id="closingSustainability">نسبة الاستمرارية</span><strong>100%</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+    التذييل (Footer)
+    ============================================================ -->
+    <footer>
+        <div class="container">
+            <p id="footerText1">© 2026 مؤسسة أثر للتنمية والتطوير | مشروع سبل العيش وتمكين الأشخاص ذوي الإعاقة</p>
+            <p id="footerText2">خان أرنبة – القنيطرة | الجمهورية العربية السورية</p>
+            <p id="footerText3">تم تنفيذ المشروع بالشراكة مع PUI و UNDP وبتمويل من الحكومة الفنلندية</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    البرامج النصية (JavaScript) - ملف منفصل: script.js
+    ============================================================ -->
+<!-- ============================================================
+    البرامج النصية (JavaScript)
+============================================================ -->
+
+<!-- مكتبة الخريطة -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- ملفات المشروع -->
+<script src="lang-ar.js"></script>
+<script src="lang-en.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
